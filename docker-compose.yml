@@ -6,3 +6,13 @@ services:
     tty: true
     volumes:
       - .:/pure-data-update
+    env_file:
+      - ./.env
+    environment: 
+      - PASS=${PASS}
+      - HEROKU_EMAIL=${HEROKU_EMAIL}
+      - HEROKU_PASS=${HEROKU_PASS}
+  selenium:
+    image: selenium/standalone-chrome
+    ports:
+      - 4444:4444

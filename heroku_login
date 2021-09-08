@@ -1,0 +1,16 @@
+#!/usr/bin/expect -f
+source ./.env
+
+expect {
+
+    "Email [$HEROKU_EMAIL]: " {
+        send "$HEROKU_EMAIL"
+        exp_continue
+    }
+
+    "Password: " {
+        send "$HEROKU_PASS"
+        exp_continue
+    }
+
+}

@@ -1,16 +1,20 @@
 from selenium import webdriver
 import pandas as pd
 import time
+import os
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 
+PASSWORD = os.environ['PASSWORD']
+
 def twitter_login_and_tweet(user_name, password):
-    PATH = '/Applications/chromedriver'
     URL = 'https://leia.serviceassistant.com/848160/Login'
-    driver = webdriver.Chrome(PATH)
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')
+    driver = webdriver.Remote("http://127.0.0.1:4444/wd/hub", options=options)
     driver.get(URL)
 
     '''
