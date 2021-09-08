@@ -1,0 +1,17 @@
+#!/bin/sh
+
+cat /data/ascii_art/start.txt
+cat /data/ascii_art/bison.txt
+python /cleaner/rev_wash_final.py
+
+cat /data/ascii_art/camel.txt
+python /cleaner/sales_wash.py
+
+cat /data/ascii_art/frog.txt
+python /cleaner/customer_lifeSpan.py
+
+cat /data/ascii_art/elephant.txt
+python /cleaner/make_turf_employees_df.py
+
+cat /data/ascii_art/dynamite.txT
+printf '\n'
